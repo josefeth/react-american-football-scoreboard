@@ -5,18 +5,18 @@ import "./App.css";
 import BottomRow from './BottomRow';
 import AwayScore from "./AwayScore";
 
-function App() {
+const App=(props) => {
   //TODO: STEP 2 - Establish your applictaion's state with some useState hooks.  You'll need one for the home score and another for the away score.
   const [score, setScore] = useState(0);
   const [point, setPoint] = useState(0);
-  //Cowoys
+  
   const touchDown = e => {
     setScore(score + 7);
   };
   const fieldGoal = e => {
     setScore(score + 3);
   };
-  //Patriots
+  
   const sucks1 = e => {
     setPoint(point + 7);
   };
@@ -55,14 +55,14 @@ function App() {
         </div>
         <div className="awayButtons">
           
-          <button className="awayButtons__touchdown" onClick={sucks1}>
+          {/* <button className="awayButtons__touchdown" onClick={sucks1}>
             Away Touchdown
           </button>
           <button className="awayButtons__fieldGoal" onClick={sucks}>
             Away Field Goal
-          </button>
+          </button> */}
         </div>
-        <AwayScore />
+        <AwayScore sucks1={sucks1} sucks={sucks}/>
       </section>
     </div>
   );

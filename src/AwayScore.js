@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React from 'react';
 import './App';
 
 // function AwayScore(props) {
@@ -19,21 +19,21 @@ import './App';
 //           )  
 //     }
 // }
-const AwayScore= () => {
-    const [point, setPoint] = useState(0);
-    const sucks1 = e => {
-        setPoint(point + 7);
-      };
-      const sucks = e => {
-        setPoint(point + 3);
-      };
+const AwayScore = (props) => {
+    // const [point, setPoint] = useState(0);
+    // const sucks1 = e => {
+    //     setPoint(point + 7);
+    //   };
+    //   const sucks = e => {
+    //     setPoint(point + 3);
+    //   };
      
     
     return(
 
       <div className="awayButtons">
-            <button className="awayButtons__touchdown" onClick={sucks1}>Away Touchdown</button>
-            <button className="awayButtons__fieldGoal" onClick={sucks}>Away Field Goal</button>
+            <button className="awayButtons__touchdown" onClick={props.sucks1}>Away Touchdown</button>
+            <button className="awayButtons__fieldGoal" onClick={props.sucks}>Away Field Goal</button>
             
           </div>
     )
